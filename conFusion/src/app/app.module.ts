@@ -33,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { baseURL } from './shared/baseurl';
 import { HttpClientModule } from '@angular/common/http';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     PromotionService,
     LeaderService,
-    {provide: 'BaseURL', useValue: baseURL}
+    {provide: 'BaseURL', useValue: baseURL},
+    ProcessHTTPMsgService
   ],
   bootstrap: [AppComponent]
 })
