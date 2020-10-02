@@ -43,9 +43,11 @@
     </mat-card-content>
   </mat-card>
 
-  <div fxFlex *ngIf="dishErrMess">
+  <div fxFlex *ngIf="dishErrMess || promotionErrMess || leaderErrMess">
     <h2>Error</h2>
-    <h4>{{dishErrMess}}</h4>
+    <h4 *ngIf="dishErrMess">{{dishErrMess}}</h4>
+    <h4 *ngIf="promotionErrMess">{{promotionErrMess}}</h4>
+    <h4 *ngIf="leaderErrMess">{{leaderErrMess}}</h4>
   </div>
 
 </div>

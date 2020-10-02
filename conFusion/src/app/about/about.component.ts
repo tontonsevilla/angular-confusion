@@ -20,6 +20,7 @@ import { expand, flyInOut } from '../animations/app.animation';
 export class AboutComponent implements OnInit {
 
   leaders: Leader[];
+  errMess: string;
 
   constructor(
     private leaderService: LeaderService,
@@ -27,7 +28,8 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.leaderService.getLeaders().subscribe(leaders => this.leaders = leaders);
+    this.leaderService.getLeaders().subscribe(leaders => this.leaders = leaders,
+      errMess => this.errMess = errMess as any);
   }
 
 }
